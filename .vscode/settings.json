@@ -27,5 +27,6 @@
     "titleBar.inactiveBackground": "#ffcccc99",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#FFCCCC"
+  "peacock.color": "#FFCCCC",
+  "cSpell.words": ["Spinaci"]
 }
