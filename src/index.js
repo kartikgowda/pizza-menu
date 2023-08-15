@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -11,34 +12,49 @@ function App() {
   );
 }
 
-function Pizza() {
-  return (
-    <div>
-      <img src="/pizzas/spinaci.jpg" alt="Pizza Spinaci"></img>
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese </p>
-    </div>
-  );
-}
-
 function Header() {
-  return <h1>React Pizza Co.</h1>;
+  const style = {};
+  return (
+    <header className="header">
+      <h1 style={style}> React Pizza Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
-      <Pizza />
-      <Pizza />
+    </main>
+  );
+}
+function Pizza() {
+  return (
+    <div className="pizza">
+      <img src="/pizzas/spinaci.jpg" alt="Pizza Spinaci"></img>
+      <h3>Pizza Spinaci</h3>
+      <p>Tomato, mozarella, spinach, and ricotta cheese </p>
     </div>
   );
 }
-
 function Footer() {
+  const hour = new Date().getHours();
+  const openingTime = 12;
+  const closingTime = 22;
+  const isOpen = hour >= openingTime && hour <= closingTime;
+  console.log(isOpen);
+
+  // if (hour >= openingTime && hour <= closingTime) {
+  //   alert('The Pizza Store is OPEN');
+  // } else {
+  //   alert('Pizza store is CLOSED');
+  // }
+
   return (
-    <footer>{new Date().toLocaleTimeString()}.We're currently OPEN</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()}.We're currently OPEN
+    </footer>
   );
 }
 
